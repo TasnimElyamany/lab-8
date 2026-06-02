@@ -1,0 +1,12 @@
+{
+  "C1_bare": "The city is Toronto and the date is March 14, 2026.",
+  "C2_role": "{\"city\": \"Toronto\", \"date\": \"2026-03-14\"}",
+  "C3_fewshot": "{\"city\":\"Toronto\",\"date\":\"2026-03-14\"}",
+  "C4_format_json": "{\"city\": \"Toronto\", \"date\": \"2026-03-14\"}",
+  "C5_temp_high#0": "You'll be visiting the Toronto office on March 14, 2026.",
+  "C5_temp_high#1": "Got it -- Toronto office, 14th of March 2026!",
+  "C5_temp_high#2": "Your visit is set for Toronto on 2026-03-14.",
+  "C6_persona": "Wonderful, we can't wait to see you at our Toronto office! Your visit on March 14, 2026 is all set -- safe travels!",
+  "C7_cot": "Total elapsed time is 17:30 - 14:00 = 3 hours 30 minutes = 210 minutes. Subtract the 20 minutes stopped: 210 - 20 = 190.\n190",
+  "_default": "Toronto, 2026-03-14"
+}

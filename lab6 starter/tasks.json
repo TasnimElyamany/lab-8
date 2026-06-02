@@ -1,0 +1,44 @@
+[
+  {
+    "id": "extract_1",
+    "category": "extraction",
+    "prompt": "Return ONLY JSON with keys 'city' and 'date'. Message: 'Hi, I'll be visiting your Toronto office on 2026-03-14.'",
+    "check": "json_match",
+    "expected": {"city": "Toronto", "date": "2026-03-14"}
+  },
+  {
+    "id": "extract_2",
+    "category": "extraction",
+    "prompt": "Return ONLY JSON with keys 'order_id' and 'amount'. Message: 'Order A100 charged $240 to my card.'",
+    "check": "json_match",
+    "expected": {"order_id": "A100", "amount": 240}
+  },
+  {
+    "id": "summ_1",
+    "category": "summarization",
+    "prompt": "Summarize in 25 words or fewer: 'MLOps is an engineering practice that combines machine learning, software engineering, and data engineering to productionize ML systems by bridging development and operations through automation, monitoring, and reproducibility.'",
+    "check": "max_words",
+    "expected": 25
+  },
+  {
+    "id": "reason_1",
+    "category": "reasoning",
+    "prompt": "A train leaves at 14:00 and arrives at 17:30. It stopped for 20 minutes total. How many minutes was it actually moving? Answer with the number only.",
+    "check": "contains",
+    "expected": "190"
+  },
+  {
+    "id": "code_1",
+    "category": "code",
+    "prompt": "Write a Python function is_even(n) that returns True if n is even. Return only code, no markdown fences.",
+    "check": "unit_test",
+    "expected": "assert is_even(4) and not is_even(3)"
+  },
+  {
+    "id": "instr_1",
+    "category": "instruction",
+    "prompt": "List exactly three benefits of versioning data. Reply with exactly three lines, each starting with '- ', and no preamble.",
+    "check": "three_bullets",
+    "expected": 3
+  }
+]

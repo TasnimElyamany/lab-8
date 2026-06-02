@@ -1,0 +1,19 @@
+name: ml-eval-gate
+on: [push, pull_request]
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.txt
+      - name: Run offline eval (mocked model, no GPU)
+        run: python run_eval.py --mock
+      - name: Score
+        run: python score.py
+      - name: Quality gate
+        env:
+          CHOSEN_MODEL: "qwen2.5:3b"
+          QUALITY_THRESHOLD: "0.8"
+        run: python gate.py
